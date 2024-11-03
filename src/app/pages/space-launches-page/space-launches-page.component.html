@@ -1,0 +1,41 @@
+<section class="space-table">
+  <header *ngIf="spaceDevLocations$ | async as locations">
+    <app-filter
+      [locations]="locations"
+      (filtersData)="filterData($event)"
+      class="locations-filter"
+    ></app-filter>
+  </header>
+
+  <div *ngIf="spaceDevData$ | async as data" class="space-table-containter">
+    <div *ngFor="let row of data" class="row">
+      <div class="col">
+        <fa-icon class="rocket-icon" [icon]="iconName"></fa-icon>
+      </div>
+      <div class="col name">
+        {{ row.name || "-" }}
+        <span>
+          {{ row.pad_info.name || "-" }}
+        </span>
+      </div>
+      <div class="col date">
+        {{ (row.window_start | date : "dd MMM yyyy") || "-" }}
+        <span>{{ "Launch date" }}</span>
+      </div>
+      <div class="col location">
+        {{ row.pad_info.location.name || "-" }}
+        <span>
+          {{ "Location" }}
+        </span>
+      </div>
+      <div class="col status">
+        <span class="status-budge">{{ row.status.name || "-" }}</span>
+      </div>
+    </div>
+
+    <span *ngIf="data.length === 0" class="empty-table">Empty Table</span>
+
+  </div>
+
+  <app-pagination class="pagination"></app-pagination>
+</section>

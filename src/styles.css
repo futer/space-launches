@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@ng-select/ng-select/themes/default.theme.css";
+@import "@ng-select/ng-select/themes/material.theme.css";
+
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ng-value-container {
+  flex-wrap: nowrap !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.ng-select {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+}
+
+.ng-select-container {
+    height: 42px !important;
+}
+
+.ng-value {
+  padding: 0 !important;
+  margin: 0 4px !important;
+  height: 24px !important;
+}
+
+.ng-value-icon {
+  display: none !important;
+}
+
+.ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value
+  .ng-value-label {
+  font-size: 12px !important;
+  line-height: 12px !important;
+}
+
+.ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value
+  .ng-value-label {
+  padding: 0px 5px !important;
+}
+
+.ng-select .ng-select-container {
+  color: rgba(0, 0, 0, 0.87);
+  align-items: baseline;
+  min-height: fit-content !important;
+  height: 100% !important;
+}
+
+.ng-dropdown-panel.ng-select-bottom {
+  top: calc(100% - 0.25em) !important;
+}
+
+.ng-placeholder {
+  line-height: 30px !important;
+  padding-left: 10px !important;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    background-color: #2382B9 !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    padding: 5px 5px !important;
+    margin: 0 8px  !important;
+}
+
+.ng-select.ng-select-opened > .ng-select-container {
+    background: #F0F5FA !important;
+    border-color: none !important;
+}
+
+.ng-select .ng-select-container {
+    color: #333;
+    background-color: #F0F5FA;
+    border-radius: 4px;
+    border: none !important;
+    min-height: 36px;
+    align-items: center;
+}
+
+.ng-arrow, .ng-clear {
+    color: #5FA5CD !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+    background-color: unset !important;
+    color: unset !important;
+}

@@ -1,0 +1,26 @@
+<div *ngIf="pagesCount$ | async as pagesCount" class="container">
+  <div class="pagination">
+    <fa-icon
+      class="arrow-icon arrow-left margin-right"
+      [class.arrow-active]="currentPage !== 0"
+      [icon]="arrowLeftIcon"
+      (click)="changePage('previouse', pagesCount.length)"
+    ></fa-icon>
+    <button
+      *ngFor="let page of pagesCount; let i = index"
+      class="page-baddge margin-right"
+      value="page"
+      type="button"
+      [class.active]="i === currentPage"
+      (click)="changePage('setPage', i)"
+    >
+      {{ i }}
+    </button>
+    <fa-icon
+      class="arrow-icon arrow-right"
+      [class.arrow-active]="currentPage < pagesCount.length - 1"
+      [icon]="arrowRightIcon"
+      (click)="changePage('next', pagesCount.length)"
+    ></fa-icon>
+  </div>
+</div>

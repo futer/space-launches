@@ -1,0 +1,25 @@
+<div class="container">
+  <ng-select
+    [items]="locations.results"
+    [multiple]="true"
+    bindLabel="name"
+    [closeOnSelect]="false"
+    [placeholder]="'Filter by Launch locations'"
+    [(ngModel)]="selectedItems"
+    (ngModelChange)="setSelectedItems(selectedItems)"
+  >
+    <ng-template
+      ng-option-tmp
+      let-item="item"
+      let-item$="item$"
+      let-index="index"
+    >
+      <input
+        id="item-{{ index }}"
+        type="checkbox"
+        [checked]="item$.selected"
+      />
+      {{ item.name }}
+    </ng-template>
+  </ng-select>
+</div>
